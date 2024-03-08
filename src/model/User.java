@@ -1,9 +1,6 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -13,10 +10,11 @@ import java.util.UUID;
 @ToString
 public class User {
     private Integer id;
-    private UUID uuid;
+    private String uuid; // Change the data type from UUID to String
     private String userName;
     private String userEmail;
     private String userPassword;
     private Boolean isDeleted;
-    private Boolean is_verified;
+    private Boolean isVerified;
 }
+
