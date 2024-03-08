@@ -24,6 +24,7 @@ public class UserRepository {
             while (resultSet.next()) {
                 userList.add(
                         new User(
+
                                 resultSet.getInt("user_id"),
                                 resultSet.getString("user_uuid"), // Use getString() for UUID
                                 resultSet.getString("user_name"),

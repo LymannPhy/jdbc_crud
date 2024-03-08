@@ -3,20 +3,24 @@
 package view;
 
 import model.User;
+import org.nocrala.tools.texttablefmt.BorderStyle;
+import org.nocrala.tools.texttablefmt.ShownBorders;
+import org.nocrala.tools.texttablefmt.Table;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 public class View {
     public static void ui() {
-        System.out.println(".".repeat(30));
-        System.out.println("User Data".toUpperCase(Locale.ROOT));
-        System.out.println(".".repeat(30));
-        System.out.println("1/ Get All users".toUpperCase(Locale.ROOT));
-        System.out.println("2/ Search users by ID".toUpperCase(Locale.ROOT));
-        System.out.println("3/ Create a new user".toUpperCase(Locale.ROOT));
-        System.out.println("4/ Update user by ID".toUpperCase(Locale.ROOT));
-        System.out.println("5/ Delete user by ID".toUpperCase(Locale.ROOT));
+        Table table = new Table(1, BorderStyle.UNICODE_BOX_DOUBLE_BORDER_WIDE, ShownBorders.SURROUND);
+        System.out.println("********************** Application Menu **********************");
+        table.addCell("1. Display All Users");
+        table.addCell("2. Search User By ID");
+        table.addCell("3. Create User");
+        table.addCell("4. Update User Info");
+        table.addCell("5. Delete");
+        table.addCell("6. Exit the program");
+        System.out.println(table.render());
     }
 
     public static int option() {
